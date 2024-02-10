@@ -17,7 +17,7 @@ int main() {
 	printf(&quot;Introduzca el valor de y = &quot;);
 	scanf(&quot;%d&quot;,&amp;y);
 
-	printf(&quot;\n%d + %d = %d\n\n&quot;,x,y,x+y);
+	printf(&quot;\n%d || %d = %d\n&quot;,x,y,x||y);
 
 	}
 
