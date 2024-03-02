@@ -4,35 +4,35 @@
 int main() {
     int num_polynomials, max_degree;
     
-    // Read the number of polynomials and the maximum degree
-    printf("Enter the number of polynomials: ");
+    // Leer el número de polinomios y el grado máximo.
+    printf("Introduce cuantos polinomios vas a sumar: ");
     scanf("%d", &num_polynomials);
-    printf("Enter the maximum degree accepted for the polynomials: ");
+    printf("Introduce el mayor coeficiente de todos los polinomios: ");
     scanf("%d", &max_degree);
     
-    // Create a matrix to store coefficients of the polynomials
+    // Crear una matriz para almacenar coeficientes de los polinomios.
     int coefficients[num_polynomials][max_degree + 1];
     
-    // Initialize the matrix with 0s
+    // Inicializar la matriz con 0
     for (int i = 0; i < num_polynomials; i++) {
         for (int j = 0; j <= max_degree; j++) {
             coefficients[i][j] = 0;
         }
     }
     
-    // Read and define the polynomials
+    // Leer y definir los polinomios.
     for (int i = 0; i < num_polynomials; i++) {
-        printf("Enter the coefficients for polynomial %c:\n", 'a' + i);
+        printf("Introduce los coeficientes de los polinomios %c:\n", 'a' + i);
         for (int j = max_degree; j >= 0; j--) {
-            printf("Coefficient of x^%d: ", j);
+            printf("Coeficiente de x^%d: ", j);
             scanf("%d", &coefficients[i][j]);
         }
     }
     
-    // Display the entered polynomials
-    printf("\nPolynomials entered:\n");
+    // Mostrar los polinomios ingresados
+    printf("\nPolinomios Introducidos:\n");
     for (int i = 0; i < num_polynomials; i++) {
-        printf("Polynomial %c: ", 'a' + i);
+        printf("Polinomio %c: ", 'a' + i);
         for (int j = max_degree; j >= 0; j--) {
             if (coefficients[i][j] != 0) {
                 if (j == max_degree) {
@@ -46,23 +46,23 @@ int main() {
         }
     }
 
-    // Sum the polynomials
+    // Suma de Polinomios
     int result[max_degree + 1];
     
-    // Initialize result array with 0s
+    // Inicializar la matriz de resultados con 0
     for (int i = 0; i <= max_degree; i++) {
         result[i] = 0;
     }
 
-    // Sum the coefficients of the polynomials
+    // Sumar los coeficientes de los polinomios.
     for (int i = 0; i < num_polynomials; i++) {
         for (int j = 0; j <= max_degree; j++) {
             result[j] += coefficients[i][j];
         }
     }
 
-    // Display the sum of the polynomials
-    printf("\nSum of Polynomials:\n");
+    // Mostrar la suma de los polinomios.
+    printf("\nSuma de polinomios:\n");
     for (int j = max_degree; j >= 0; j--) {
         if (result[j] != 0) {
             if (j == max_degree) {
